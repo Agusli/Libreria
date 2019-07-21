@@ -1,0 +1,32 @@
+﻿@model WebApplication2.Models.Editorial
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/Editorial");
+
+
+<h2>Create</h2>
+
+<div class="form-horizontal">
+    <h4>Editorial</h4>
+    <hr />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="text" id="Nombre" placeholder="Nombre" />
+            <hr />
+            <input type="text" id="Pais" placeholder="Pais" />
+            <hr/>
+            <input type="submit" value="Create" class="btn btn-default" onclick="Submit()"/>
+        </div>
+    </div>
+</div>
+
+<section id="msg"></section>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

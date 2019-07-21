@@ -1,0 +1,56 @@
+﻿@model WebApplication2.Models.Libro
+
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<div class="form-horizontal">
+    <h4>Book</h4>
+    <hr />
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+
+            <select name="Autores">
+                <option value="#" selected>Seleccione un autor</option>
+                @foreach (var item in Model.AutorList)
+                {
+                  <option value="@item.IdAutor">@item.Nombre</option>
+                }
+            </select>
+            <hr />
+
+            <select name="Editoriales">
+                <option value="#" selected>Seleccione una Editorial</option>
+                @foreach (var item in Model.EditorialList)
+                {
+                    
+                  <option value="@item.IdEditorial">@item.Nombre</option>
+                }
+            </select>
+            <hr />
+
+            <select name="Generos">
+      
+                <option value="#" selected>Seleccione un Genero</option>
+                @foreach (var item in Model.GeneroList)
+                {
+                  <option value="@item.IdGenero">@item.Tipo</option>
+                }
+            </select>
+            <hr />
+
+            <input type="submit" value="Create" class="btn bg-primary btn-lg" role="button">
+
+        </div>
+    </div>
+</div>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
